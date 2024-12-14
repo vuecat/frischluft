@@ -1,4 +1,5 @@
 import type {
+  CategoriesConfig,
   LicenseConfig,
   NavBarConfig,
   ProfileConfig,
@@ -79,4 +80,14 @@ export const licenseConfig: LicenseConfig = {
   enable: true,
   name: 'CC BY-NC-SA 4.0',
   url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
+}
+
+export const categoriesConfig: CategoriesConfig = {
+  enable: true,
+  logoList: [
+    ['Obsidian', 'logos:obsidian-icon'],
+    ['Vue', 'logos:vue'],
+    ['Java', 'logos:java'],
+    ['Default', 'material-symbols:book-rounded']
+  ]
 }
