@@ -1,0 +1,16 @@
+---
+import {Icon} from "astro-icon/components";
+const {type} = Astro.props
+---
+
+<div class="transition flex items-center text-2xl text-75 font-bold mb-2">
+    {type == "tag" ?
+            <Icon name="material-symbols:tag-rounded"
+                  class="transition text-2xl mr-1">
+            </Icon> :
+            <Icon name="material-symbols:book-5-outline-rounded"
+                  class="transition text-2xl mr-1">
+            </Icon>
+    }
+    <slot/>
+</div>

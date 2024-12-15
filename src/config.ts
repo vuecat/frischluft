@@ -52,6 +52,7 @@ export const navBarConfig: NavBarConfig = {
 }
 
 export const profileConfig: ProfileConfig = {
+  profileCardEnable: false,
   avatar: 'assets/images/demo-avatar.png',  // Relative to the /src directory. Relative to the /public directory if it starts with '/'
   name: 'Lorem Ipsum',
   bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -84,10 +85,11 @@ export const licenseConfig: LicenseConfig = {
 
 export const categoriesConfig: CategoriesConfig = {
   enable: true,
+  postcardCategoriesEnable: true,    //Otherwise the default icon will be displayed
   logoList: [
     ['Obsidian', 'logos:obsidian-icon'],
     ['Vue', 'logos:vue'],
     ['Java', 'logos:java'],
-    ['Default', 'material-symbols:book-rounded']
-  ]
+    ['Default', 'material-symbols:book-2-outline-rounded']
+  ],
 }

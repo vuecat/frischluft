@@ -33,9 +33,9 @@ const logoIcon = logoSetting.get(logo) !== undefined ? logoSetting.get(logo) : l
     >
         <div class="flex items-center justify-between relative mr-2">
             <div class="flex items-center justify-between relative">
-                <div class="w-8 h-8 rounded-md flex items-center justify-center">
+                {categoriesConfig.enable && <div class="w-8 h-8 rounded-md flex items-center justify-center">
                     <Icon name={logoIcon} class="text-xl"/>
-                </div>
+                </div>}
                 <div class="overflow-hidden text-left whitespace-nowrap overflow-ellipsis  ">
                     <slot></slot>
                 </div>

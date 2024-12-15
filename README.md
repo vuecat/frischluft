@@ -1,30 +1,17 @@
-# 🍥Fuwari
+# Frischluft
 
-A static blog template built with [Astro](https://astro.build).
+A static blog template based on [fuwari](https://github.com/saicaca/fuwari)
 
-[**🖥️ Live Demo (Vercel)**](https://fuwari.vercel.app)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
-[**📦 Old Hexo Version**](https://github.com/saicaca/hexo-theme-vivia)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
-[**🌏 中文**](https://github.com/saicaca/fuwari/blob/main/README.zh-CN.md)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
-[**🌏 日本語**](https://github.com/saicaca/fuwari/blob/main/README.ja-JP.md)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
-[**🌏 한국어**](https://github.com/saicaca/fuwari/blob/main/README.ko.md)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
-[**🌏 Español**](https://github.com/saicaca/fuwari/blob/main/README.es.md)
+## Features (compared to fuwari)
 
-> README version: `2024-09-10`
+- [x] Remove the svelte component and replace it with a vue component
+- [x] Add an icon display to the category list.
+- [x] Add titles to category and tag pages.
+- [x] Simplified switching between light and dark.
+- [X] Profile cards are now optional
+- [ ] Change the interaction logic for theme color modification.
 
-![Preview Image](https://raw.githubusercontent.com/saicaca/resource/main/fuwari/home.png)
-
-## ✨ Features
-
-- [x] Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com)
-- [x] Smooth animations and page transitions
-- [x] Light / dark mode
-- [x] Customizable theme colors & banner
-- [x] Responsive design
-- [ ] Comments
-- [x] Search
-- [ ] TOC
-
-## 🚀 How to Use
+## How to Use
 
 1. [Generate a new repository](https://github.com/saicaca/fuwari/generate) from this template or fork this repository.
 2. To edit your blog locally, clone your repository, run `pnpm install` AND `pnpm add sharp` to install dependencies.
@@ -33,7 +20,7 @@ A static blog template built with [Astro](https://astro.build).
 4. Run `pnpm new-post <filename>` to create a new post and edit it in `src/content/posts/`.
 5. Deploy your blog to Vercel, Netlify, GitHub Pages, etc. following [the guides](https://docs.astro.build/en/guides/deploy/). You need to edit the site configuration in `astro.config.mjs` before deployment.
 
-## ⚙️ Frontmatter of Posts
+## Frontmatter of Posts
 
 ```yaml
 ---
@@ -48,7 +35,7 @@ lang: jp      # Set only if the post's language differs from the site's language
 ---
 ```
 
-## 🧞 Commands
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 

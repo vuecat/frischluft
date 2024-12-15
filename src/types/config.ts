@@ -51,6 +51,7 @@ export type NavBarConfig = {
 }
 
 export type ProfileConfig = {
+    profileCardEnable: boolean
     avatar?: string
     name: string
     bio?: string
@@ -89,5 +90,6 @@ export type BlogPostData = {
 
 export type CategoriesConfig = {
     enable: boolean
-    logoList: [string, string][]
+    logoList: [string, string][],
+    postcardCategoriesEnable: boolean
 }
