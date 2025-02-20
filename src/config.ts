@@ -8,12 +8,11 @@ import type {
 import { LinkPreset } from './types/config'
 
 export const siteConfig: SiteConfig = {
-  title: 'Fuwari',
+  title: 'vuecat',
   subtitle: 'Demo Site',
   lang: 'en',         // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko'
   themeColor: {
-    hue: 250,         // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
-    fixed: false,     // Hide the theme color picker for visitors
+    hue: 235,     // 设置您想要的色调值（0-360）
   },
   banner: {
     enable: false,
@@ -36,7 +35,7 @@ export const siteConfig: SiteConfig = {
     //   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
     // }
   ]
-}
+} as const;
 
 export const navBarConfig: NavBarConfig = {
   links: [

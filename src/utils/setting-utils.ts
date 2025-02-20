@@ -1,3 +1,4 @@
+import { siteConfig } from '@/config'
 import type { LIGHT_DARK_MODE } from '@/types/config'
 import {
   AUTO_MODE,
@@ -13,8 +14,7 @@ export function getDefaultHue(): number {
 }
 
 export function getHue(): number {
-  const stored = localStorage.getItem('hue')
-  return stored ? Number.parseInt(stored) : getDefaultHue()
+  return siteConfig.themeColor.hue
 }
 
 export function setHue(hue: number): void {

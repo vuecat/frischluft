@@ -8,7 +8,6 @@ export type SiteConfig = {
 
     themeColor: {
         hue: number
-        fixed: boolean
     }
     banner: {
         enable: boolean

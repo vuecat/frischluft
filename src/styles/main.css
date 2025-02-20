@@ -18,7 +18,7 @@
         @apply transition rounded-md p-1 -m-1 expand-animation;
     }
     .link-lg {
-        @apply transition rounded-md p-1.5 -m-1.5 expand-animation;
+        @apply transition rounded-md p-0.5 px-1 expand-animation;
     }
     .float-panel {
         @apply top-[5.25rem] rounded-[var(--radius-large)] overflow-hidden bg-[var(--float-panel-bg)] transition shadow-xl dark:shadow-none
@@ -94,7 +94,7 @@
     }
 
     .meta-icon {
-        @apply w-8 h-8 transition rounded-md flex items-center justify-center bg-[var(--btn-regular-bg)]
+        @apply w-6 h-6 transition rounded-md flex items-center justify-center bg-[var(--btn-regular-bg)]
         text-[var(--btn-content)] mr-2
     }
     .with-divider {
