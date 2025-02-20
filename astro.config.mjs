@@ -57,6 +57,10 @@ export default defineConfig({
     },
   }), vue()],
   markdown: {
+    syntaxHighlight: 'shiki',
+    shikiConfig: {
+      theme: 'nord',
+    },
     remarkPlugins: [
       remarkMath,
       remarkReadingTime,
