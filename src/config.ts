@@ -87,7 +87,7 @@ export const categoriesConfig: CategoriesConfig = {
   postcardCategoriesEnable: true,    //Otherwise the default icon will be displayed
   logoList: [
     ['Obsidian', 'logos:obsidian-icon'],
-    ['Vue', 'logos:vue'],
+    ['Vue', 'vscode-icons:file-type-vue'],
     ['Java', 'logos:java'],
     ['Default', 'material-symbols:book-2-outline-rounded']
   ],
