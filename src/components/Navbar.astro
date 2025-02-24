@@ -1,19 +1,22 @@
 ---
 import { Icon } from 'astro-icon/components'
 import DisplaySettings from './widget/DisplaySettings.vue'
-import { LinkPreset, type NavBarLink } from '../types/config'
+import type { NavBarLink } from '../types/config'
 import { navBarConfig, siteConfig } from '../config'
 import NavMenuPanel from './widget/NavMenuPanel.astro'
 import Search from './Search.vue'
-import { LinkPresets } from '../constants/link-presets'
 import LightDarkSwitch from './LightDarkSwitch.vue'
 import { url } from '../utils/url-utils'
+import { i18n } from '@i18n/translation'
 const className = Astro.props.class
 
-let links: NavBarLink[] = navBarConfig.links.map(
-  (item: NavBarLink | LinkPreset): NavBarLink => {
-    if (typeof item === 'number') {
-      return LinkPresets[item]
+const links: NavBarLink[] = navBarConfig.links.map(
+  item => {
+    if ('i18nKey' in item) {  // 检查是否为 NavBarLocalLink
+      return {
+        name: i18n(item.i18nKey),
+        url: item.url
+      }
     }
     return item
   },

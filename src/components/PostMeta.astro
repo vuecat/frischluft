@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components'
 import { categoriesConfig } from '../config'
+import type { LogoConfig } from '@/types/config'
 import I18nKey from '../i18n/i18nKey'
 import { i18n } from '../i18n/translation'
 import { formatDateToYYYYMMDD } from '../utils/date-utils'
@@ -25,11 +26,9 @@ const {
 } = Astro.props
 const className = Astro.props.class
 
-const logoSetting = new Map<string, string>(categoriesConfig.logoList)
-const logoIcon =
-  logoSetting.get(category) !== undefined
-    ? logoSetting.get(category)
-    : logoSetting.get('Default')
+const logoIcon: LogoConfig =
+  categoriesConfig.logoMap.get(category) ??
+  (categoriesConfig.logoMap.get('DefaultTiny') as LogoConfig)
 ---
 
 <div class:list={["flex flex-wrap text-neutral-500 dark:text-neutral-400 items-center gap-4 gap-x-4 gap-y-2", className]}>
@@ -57,7 +56,7 @@ const logoIcon =
     <div class="flex items-center">
         <div class="meta-icon"
         >
-            {categoriesConfig.postcardCategoriesEnable?<Icon name={logoIcon} class="text-base"/>:<Icon name="material-symbols:book-2-outline-rounded" class="text-base"/>}
+            {categoriesConfig.postcardCategoriesEnable?<Icon name={logoIcon.icon} class="text-base"/>:<Icon name="material-symbols:book-2-outline-rounded" class="text-base"/>}
         </div>
         <div class="flex flex-row flex-nowrap items-center">
             <a href={url(`/archive/category/${category || 'uncategorized'}/`)} aria-label=`View all posts in the ${category} category`

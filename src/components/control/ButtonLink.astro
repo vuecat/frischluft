@@ -1,15 +1,17 @@
 ---
-import {categoriesConfig} from "@/config";
-import {Icon} from "astro-icon/components";
+import { categoriesConfig } from '@/config'
+import type { LogoConfig } from '@/types/config'
+import { Icon } from 'astro-icon/components'
 interface Props {
-    logo: string
-    badge?: string
-    url?: string
-    label?: string
+  logo: string
+  badge?: string
+  url?: string
+  label?: string
 }
-const {logo,badge, url, label} = Astro.props
-const logoSetting = new Map<string, string>(categoriesConfig.logoList)
-const logoIcon = logoSetting.get(logo) !== undefined ? logoSetting.get(logo) : logoSetting.get('Default')
+const { logo, badge, url, label } = Astro.props
+const logoIcon: LogoConfig =
+  categoriesConfig.logoMap.get(logo) ??
+  (categoriesConfig.logoMap.get('Default') as LogoConfig)
 ---
 <a href={url} aria-label={label}>
     <button
@@ -34,7 +36,11 @@ const logoIcon = logoSetting.get(logo) !== undefined ? logoSetting.get(logo) : l
         <div class="flex items-center justify-between relative mr-2">
             <div class="flex items-center justify-between relative">
                 {categoriesConfig.enable && <div class="w-8 h-8 rounded-md flex items-center justify-center">
-                    <Icon name={logoIcon} class="text-xl"/>
+                    <Icon 
+                        name={logoIcon.icon} 
+                        class="text-xl"
+                        style={`opacity: ${logoIcon?.opacity ?? 1}`}
+                    />
                 </div>}
                 <div class="overflow-hidden text-left whitespace-nowrap overflow-ellipsis  ">
                     <slot></slot>

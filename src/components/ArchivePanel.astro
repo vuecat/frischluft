@@ -16,10 +16,12 @@ const {keyword, tags, categories} = Astro.props
 let posts = await getSortedPosts()
 let title = ""
 let archiveType = ""
+let isTitleActive = false
 
 if (Array.isArray(tags) && tags.length > 0) {
     title = tags[0]
     archiveType = "tag"
+    isTitleActive = true
     posts = posts.filter(
         post =>
             Array.isArray(post.data.tags) &&
@@ -30,6 +32,7 @@ if (Array.isArray(tags) && tags.length > 0) {
 if (Array.isArray(categories) && categories.length > 0) {
     title = categories[0]
     archiveType="categories"
+    isTitleActive = true
     posts = posts.filter(
         post =>
             (post.data.category && categories.includes(post.data.category)) ||
@@ -73,7 +76,7 @@ function formatTag(tag: string[]) {
 ---
 
 <div class="card-base px-8 py-6">
-    <TypeCard type={archiveType}>{title}</TypeCard>
+    {isTitleActive && <TypeCard type={archiveType}>{title}</TypeCard>}
     {
         groups.map(group => (
                 <div>

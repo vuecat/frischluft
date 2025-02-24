@@ -1,16 +1,22 @@
 import type {
   CategoriesConfig,
+  FooterConfig,
   LicenseConfig,
+  LogoConfig,
   NavBarConfig,
+  NavBarLocalLink,
   ProfileConfig,
   SiteConfig,
 } from './types/config'
 import { LinkPreset } from './types/config'
 
+import I18nKey from '@i18n/i18nKey'
+import { i18n } from '@i18n/translation'
+
 export const siteConfig: SiteConfig = {
   title: 'vuecat',
   subtitle: 'Demo Site',
-  lang: 'en',         // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko'
+  lang: 'zh_CN',         // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko'
   themeColor: {
     hue: 235,     // 设置您想要的色调值（0-360）
   },
@@ -36,12 +42,23 @@ export const siteConfig: SiteConfig = {
     // }
   ]
 } as const;
-
+const navBarLocalLinks: NavBarLocalLink[] = [
+  {
+    i18nKey: I18nKey.home,
+    url: '/',
+  },
+  {
+    i18nKey: I18nKey.archive,
+    url: '/archive/',
+  }, 
+  {
+    i18nKey: I18nKey.about,
+    url: '/about/',
+  },
+]
 export const navBarConfig: NavBarConfig = {
   links: [
-    LinkPreset.Home,
-    LinkPreset.Archive,
-    LinkPreset.About,
+    ...navBarLocalLinks,
     {
       name: 'GitHub',
       url: 'https://github.com/saicaca/fuwari',     // Internal links should not include the base path, as it is automatically added
@@ -53,8 +70,8 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
   profileCardEnable: false,
   avatar: 'assets/images/demo-avatar.png',  // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-  name: 'Lorem Ipsum',
-  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  name: 'Codeview',
+  bio: '-',
   links: [
     {
       name: 'Twitter',
@@ -76,6 +93,12 @@ export const profileConfig: ProfileConfig = {
   ],
 }
 
+export const footerConfig: FooterConfig = {
+  name: 'Codeview',
+  enableRSS: false,
+  enableSitemap: false,
+}
+
 export const licenseConfig: LicenseConfig = {
   enable: true,
   name: 'CC BY-NC-SA 4.0',
@@ -85,10 +108,11 @@ export const licenseConfig: LicenseConfig = {
 export const categoriesConfig: CategoriesConfig = {
   enable: true,
   postcardCategoriesEnable: true,    //Otherwise the default icon will be displayed
-  logoList: [
-    ['Obsidian', 'logos:obsidian-icon'],
-    ['Vue', 'vscode-icons:file-type-vue'],
-    ['Java', 'logos:java'],
-    ['Default', 'material-symbols:book-2-outline-rounded']
-  ],
+  logoMap: new Map<string, LogoConfig>([
+    ['Obsidian', {icon: 'logos:obsidian-icon'}],
+    ['Vue', {icon: 'vscode-icons:file-type-vue'}],
+    ['Java', {icon: 'logos:java'}],
+    ['Default', {icon: 'material-symbols:book-2-rounded',opacity:0.7}],
+    ['DefaultTiny', {icon: 'material-symbols:book-2-outline-rounded'}],
+  ]),
 }

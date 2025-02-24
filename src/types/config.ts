@@ -1,4 +1,5 @@
 import type {AUTO_MODE, DARK_MODE, LIGHT_MODE} from '@constants/constants'
+import type I18nKey from '@i18n/i18nKey'
 
 export type SiteConfig = {
     title: string
@@ -38,7 +39,10 @@ export enum LinkPreset {
     Archive = 1,
     About = 2,
 }
-
+export type NavBarLocalLink = {
+    i18nKey: I18nKey
+    url: string
+}
 export type NavBarLink = {
     name: string
     url: string
@@ -46,7 +50,7 @@ export type NavBarLink = {
 }
 
 export type NavBarConfig = {
-    links: (NavBarLink | LinkPreset)[]
+    links: (NavBarLink | NavBarLocalLink)[]
 }
 
 export type ProfileConfig = {
@@ -89,6 +93,17 @@ export type BlogPostData = {
 
 export type CategoriesConfig = {
     enable: boolean
-    logoList: [string, string][],
+    logoMap: Map<string, LogoConfig>
     postcardCategoriesEnable: boolean
+}
+
+export type LogoConfig = {
+    icon: string
+    opacity?: number
+}
+
+export type FooterConfig = {
+    name: string
+    enableRSS: boolean
+    enableSitemap: boolean
 }
