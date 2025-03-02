@@ -42,6 +42,7 @@ export const siteConfig: SiteConfig = {
     // }
   ]
 } as const;
+// Local link, which has a i18nKey and a url
 const navBarLocalLinks: NavBarLocalLink[] = [
   {
     i18nKey: I18nKey.home,
@@ -59,6 +60,7 @@ const navBarLocalLinks: NavBarLocalLink[] = [
 export const navBarConfig: NavBarConfig = {
   links: [
     ...navBarLocalLinks,
+    // External link, which has a non translated name, a url and an icon
     {
       name: 'GitHub',
       url: 'https://github.com/saicaca/fuwari',     // Internal links should not include the base path, as it is automatically added
