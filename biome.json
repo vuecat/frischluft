@@ -35,6 +35,7 @@
     }
   },
   "linter": {
+    "autoFix": false,
     "ignore": [],
     "rules": {
       "a11y": {

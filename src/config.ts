@@ -8,10 +8,8 @@ import type {
   ProfileConfig,
   SiteConfig,
 } from './types/config'
-import { LinkPreset } from './types/config'
 
 import I18nKey from '@i18n/i18nKey'
-import { i18n } from '@i18n/translation'
 
 export const siteConfig: SiteConfig = {
   title: 'vuecat',
