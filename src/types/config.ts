@@ -54,7 +54,7 @@ export type NavBarConfig = {
 }
 
 export type ProfileConfig = {
-    profileCardEnable: boolean
+    enable: boolean
     avatar?: string
     name: string
     bio?: string

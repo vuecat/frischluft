@@ -61,7 +61,6 @@
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "^1.10.4",
-    "@biomejs/biome": "1.8.3",
     "@iconify-json/logos": "^1.2.3",
     "@iconify-json/vscode-icons": "^1.2.15",
     "@iconify/vue": "^4.2.0",
