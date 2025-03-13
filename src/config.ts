@@ -5,6 +5,7 @@ import type {
   LogoConfig,
   NavBarConfig,
   NavBarLocalLink,
+  PostCardConfig,
   ProfileConfig,
   SiteConfig,
 } from './types/config'
@@ -74,7 +75,7 @@ export const profileConfig: ProfileConfig = {
   bio: 'this is Bio text',
   links: [
     {
-      name: 'Twitter',
+      name: 'X(Twitter)',
       icon: 'fa6-brands:x-twitter',       // Visit https://icones.js.org/ for icon codes
                                         // You will need to install the corresponding icon set if it's not already included
                                         // `pnpm add @iconify-json/<icon-set-name>`
@@ -107,7 +108,7 @@ export const licenseConfig: LicenseConfig = {
 
 export const categoriesConfig: CategoriesConfig = {
   enable: true,
-  postcardCategoriesEnable: true,    //Otherwise the default icon will be displayed
+  postcardCategoriesEnable: true,
   logoMap: new Map<string, LogoConfig>([
     ['Obsidian', {icon: 'logos:obsidian-icon'}],
     ['Vue', {icon: 'vscode-icons:file-type-vue'}],
@@ -115,4 +116,7 @@ export const categoriesConfig: CategoriesConfig = {
     ['Default', {icon: 'material-symbols:book-2-rounded',opacity:0.7}],
     ['DefaultTiny', {icon: 'material-symbols:book-2-outline-rounded'}],
   ]),
+}
+export const postCardConfig:PostCardConfig={
+  customLogoEnable:true     //Otherwise the default icon will be displayed
 }

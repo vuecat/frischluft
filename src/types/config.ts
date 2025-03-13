@@ -107,3 +107,6 @@ export type FooterConfig = {
     enableRSS: boolean
     enableSitemap: boolean
 }
+export type PostCardConfig={
+    customLogoEnable: boolean
+}
