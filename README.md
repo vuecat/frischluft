@@ -8,9 +8,12 @@ A static blog template based on [fuwari](https://github.com/saicaca/fuwari)
 - [x] Add an icon display to the category list.
 - [x] Add titles to category and tag pages.
 - [x] Simplified switching between light and dark.
-- [X] Profile cards are now optional
-- [ ] Change the interaction logic for theme color modification.
-
+- [X] Profile cards are now optional.
+- [X] Change the interaction logic for theme color modification.
+- [X] Add blog topping feature.
+- [X] Add category display icons.
+- [X] Modify the logic of some of the configurations in `config.ts`.
+- [ ] Multi-language blog.
 ## How to Use
 
 1. [Generate a new repository](https://github.com/saicaca/fuwari/generate) from this template or fork this repository.
