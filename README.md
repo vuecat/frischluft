@@ -4,11 +4,11 @@ A static blog template based on [fuwari](https://github.com/saicaca/fuwari)
 
 ## Features (compared to fuwari)
 
-- [x] Remove the svelte component and replace it with a vue component
+- [x] Remove the svelte component and replace it with vue component
 - [x] Add an icon display to the category list.
 - [x] Add titles to category and tag pages.
 - [x] Simplified switching between light and dark.
-- [X] Profile cards are now optional.
+- [X] All side cards are now optional.
 - [X] Change the interaction logic for theme color modification.
 - [X] Add blog topping feature.
 - [X] Add category display icons.
