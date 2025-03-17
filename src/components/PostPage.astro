@@ -8,7 +8,7 @@ let delay = 0
 const interval = 50
 ---
 <div class="transition flex flex-col rounded-[var(--radius-large)] bg-[var(--card-bg)] py-1 md:py-0 md:bg-transparent md:gap-4 mb-4">
-    {page.data.map((entry: { data: { draft: boolean; title: string; tags: string[]; category: string; published: Date; image: string; description: string; updated: Date; }; slug: string; }) => {
+    {page.data.map((entry: { data: { draft: boolean; pinned:boolean; title: string; tags: string[]; category: string; published: Date; image: string; description: string; updated: Date; }; slug: string; }) => {
         return (
             <PostCard
                     entry={entry}
@@ -22,6 +22,7 @@ const interval = 50
                     description={entry.data.description}
                     draft={entry.data.draft}
                     class:list="onload-animation"
+                    pinned={entry.data.pinned}
                     style={`animation-delay: calc(var(--content-delay) + ${delay++ * interval}ms);`}
             ></PostCard>
         );

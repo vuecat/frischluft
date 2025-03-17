@@ -7,21 +7,21 @@ import type {
   NavBarLocalLink,
   PostCardConfig,
   ProfileConfig,
-  SiteConfig,
+  SiteConfig, TagConfig,
 } from './types/config'
 
 import I18nKey from '@i18n/i18nKey'
 
 export const siteConfig: SiteConfig = {
-  title: 'vuecat',
+  title: 'Frischluft',
   subtitle: 'Demo Site',
   lang: 'zh_CN',         // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko'
   themeColor: {
     hue: 235,     // 设置您想要的色调值（0-360）
   },
   banner: {
-    enable: false,
-    src: 'assets/images/demo-banner.png',   // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+    enable: true,
+    src: 'assets/images/demo-banner.jpeg',   // Relative to the /src directory. Relative to the /public directory if it starts with '/'
     position: 'center',      // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
     credit: {
       enable: false,         // Display the credit text of the banner image
@@ -59,7 +59,7 @@ const navBarLocalLinks: NavBarLocalLink[] = [
 export const navBarConfig: NavBarConfig = {
   links: [
     ...navBarLocalLinks,
-    // External link, which has a non translated name, a url and an icon
+    // External link, which has a non translated name, an url and an icon
     {
       name: 'GitHub',
       url: 'https://github.com/saicaca/fuwari',     // Internal links should not include the base path, as it is automatically added
@@ -69,10 +69,10 @@ export const navBarConfig: NavBarConfig = {
 }
 
 export const profileConfig: ProfileConfig = {
-  enable: true,
+  enable: false,
   avatar: 'assets/images/demo-avatar.png',  // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-  name: 'Codeview',
-  bio: 'this is Bio text',
+  name: 'frischluft',
+  bio: '-',
   links: [
     {
       name: 'X(Twitter)',
@@ -108,15 +108,20 @@ export const licenseConfig: LicenseConfig = {
 
 export const categoriesConfig: CategoriesConfig = {
   enable: true,
-  postcardCategoriesEnable: true,
+  customLogoEnable: true,
   logoMap: new Map<string, LogoConfig>([
     ['Obsidian', {icon: 'logos:obsidian-icon'}],
     ['Vue', {icon: 'vscode-icons:file-type-vue'}],
     ['Java', {icon: 'logos:java'}],
+    ['Minecraft', {icon: 'vscode-icons:file-type-minecraft'}],
     ['Default', {icon: 'material-symbols:book-2-rounded',opacity:0.7}],
     ['DefaultTiny', {icon: 'material-symbols:book-2-outline-rounded'}],
+
   ]),
 }
 export const postCardConfig:PostCardConfig={
   customLogoEnable:true     //Otherwise the default icon will be displayed
+}
+export const tagConfig:TagConfig={
+  enable: true
 }

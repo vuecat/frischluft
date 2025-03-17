@@ -33,12 +33,6 @@ export type Favicon = {
     theme?: 'light' | 'dark'
     sizes?: string
 }
-
-export enum LinkPreset {
-    Home = 0,
-    Archive = 1,
-    About = 2,
-}
 export type NavBarLocalLink = {
     i18nKey: I18nKey
     url: string
@@ -83,6 +77,7 @@ export type BlogPostData = {
     description: string
     tags: string[]
     draft?: boolean
+    pinned?: boolean
     image?: string
     category?: string
     prevTitle?: string
@@ -92,9 +87,9 @@ export type BlogPostData = {
 }
 
 export type CategoriesConfig = {
-    enable: boolean
+    enable: boolean,
+    customLogoEnable: boolean,
     logoMap: Map<string, LogoConfig>
-    postcardCategoriesEnable: boolean
 }
 
 export type LogoConfig = {
@@ -109,4 +104,7 @@ export type FooterConfig = {
 }
 export type PostCardConfig={
     customLogoEnable: boolean
+}
+export type TagConfig = {
+    enable: boolean
 }
