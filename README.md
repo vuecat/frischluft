@@ -16,7 +16,7 @@ A static blog template based on [fuwari](https://github.com/saicaca/fuwari)
 - [ ] Multi-language blog.
 ## How to Use
 
-1. [Generate a new repository](https://github.com/saicaca/fuwari/generate) from this template or fork this repository.
+1. [Generate a new repository](https://github.com/vuecat/frischluft/generate) from this template or fork this repository.
 2. To edit your blog locally, clone your repository, run `pnpm install` AND `pnpm add sharp` to install dependencies.
    - Install [pnpm](https://pnpm.io) `npm install -g pnpm` if you haven't.
 3. Edit the config file `src/config.ts` to customize your blog.
